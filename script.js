@@ -25,6 +25,26 @@ function makeDisable(complete) {
             
             // Append the log entry to the activity log
             activityLog.appendChild(newLogEntry);
+
+               
+            //Decrease task assigned count
+
+            const taskAssignedElement = document.querySelector('.col-span-4 h2');
+            let currentTaskCount = parseInt(taskAssignedElement.textContent);
+            if (currentTaskCount > 0){
+                currentTaskCount--;
+                taskAssignedElement.textContent = currentTaskCount;
+            }
+
+
+            //Increase checkbox count
+            const checkBox = document.querySelector('.check');
+            let currentCheckCount = parseInt(checkBox.textContent);
+            if(currentCheckCount > 0){
+                currentCheckCount++;
+                checkBox.textContent = currentCheckCount;
+            }
+
         });
     });
 }
@@ -64,6 +84,6 @@ function back(){
      const backButton = document.querySelector('.back')
       backButton.addEventListener('click',
         ()=>{ window.location.href = 'index.html';
-            
+
          }) } 
         back();
