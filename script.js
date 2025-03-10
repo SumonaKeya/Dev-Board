@@ -46,3 +46,24 @@ messages.forEach(message => message.remove());
     });
 }
 clearHistory();
+
+//Discover button
+
+function discover(){
+    const discoverButton = document.querySelector('.discover')
+    discoverButton.addEventListener('click', ()=>{
+        window.location.href = 'index2.html';
+    })
+}
+discover();
+
+//Back button
+
+//Back button 
+function back(){
+     const backButton = document.querySelector('.back')
+      backButton.addEventListener('click',
+        ()=>{ window.location.href = 'index.html';
+            
+         }) } 
+        back();
