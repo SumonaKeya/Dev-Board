@@ -12,13 +12,20 @@
 </head>
 <style>
     .disabled {
-    background-color: grey;
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
+        background-color: grey;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+    body.light-theme {
+        background-color: #FFFFFF; /* Light background */
+        color: #000000; /* Dark text */
+    }
+    body.dark-theme {
+        background-color: #b2f387; /* Dark background */
+        color: #090000; /* Light text */
+    }
 </style>
-<body style="background-color: #FFFFFF;">
+<body style="background-color: #FFFFFF;" class="light-theme">
     <!-- Nav -->
     <div class="flex justify-between items-center pt-10 pr-20 pl-20" style="background: rgb(255, 255, 255);">
         <div class="flex items-center">
@@ -31,7 +38,7 @@
                 <h4 class="text-[#00303C]  pr-5 check">24</h4>
             </div>
             <div class="pl-5">
-                <img src="./assets/theme-btn.png">
+                <img src="./assets/theme-btn.png" id="theme-btn">
             </div>
         </div>
 
@@ -209,7 +216,14 @@
             <hr style="border: 1px dotted  #ccc; margin: 20px 0; width: 50%;">
 
         </div>
+   <script>
+        // Bg-color
+        const themeButton = document.getElementById('theme-btn');
 
+        themeButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
         <script src="script.js"></script>
         
 

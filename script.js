@@ -4,6 +4,14 @@ function makeDisable(complete) {
     const buttons = document.querySelectorAll(`.${complete}`); 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+            
+            //Alert message
+            const confirmed = confirm("Board updated successfully");
+            if (confirmed){
+
+            
+
+
             // Disable the button and add a 'disabled' class
             button.disabled = true;
             button.classList.add('disabled');
@@ -44,7 +52,7 @@ function makeDisable(complete) {
                 currentCheckCount++;
                 checkBox.textContent = currentCheckCount;
             }
-
+        }
         });
     });
 }
@@ -87,3 +95,11 @@ function back(){
 
          }) } 
         back();
+
+
+        //Bg-color
+        const themeButton = document.getElementById('theme-btn');
+
+        themeButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
